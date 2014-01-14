@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Jickoy</title>
+  <link rel="stylesheet" href="jick.css">
+  <script type="text/javascript" async="" src="./js/ga.js"></script>
+  <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/elementpick.js"></script>
+  <link  href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  </head>
+<style>
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+</style>
+<body id="mondrian">
+  
+  <div id="container">
+    
+    <div id="title">Pick a Color or image and Paste it in anyware in the Frame</div>  
+
+    <div id="spacer_container"> 
+      <div id="workspace">
+        <div id="color_palette">
+
+          <div class="color" id="red"></div>
+          <div class="color" id="yellow"></div>
+          <div class="color" id="blue"></div>
+          <div class="color" id="white"></div>
+		  <div class="color" id="pict"></div>
+
+        </div>  
+
+        <div id="painting">
+
+          <div id="row_1">
+            <div class="row" id="row_1_box_1" style="background-color: rgb(255, 236, 0);background-image:;"></div>
+            <div class="row" id="row_1_box_2" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_1_box_3" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_1_box_4" style="background-color: rgb(255, 236, 0);"></div>
+          </div>
+
+          <div id="row_2">
+            <div class="row" id="row_2_box_1" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_2_box_2" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_2_box_3" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_2_box_4" style="background-color: rgb(255, 236, 0);"></div>
+          </div>
+
+          <div id="row_3">
+            <div class="row" id="row_3_box_1" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_3_box_2" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_3_box_3" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_3_box_4" style="background-color: rgb(255, 236, 0);"></div>    
+          </div>
+
+          <div id="row_4">
+            <div class="row" id="row_4_box_1" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_4_box_2" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_4_box_3" style="background-color: rgb(255, 236, 0);"></div>
+            <div class="row" id="row_4_box_4" style="background-color: rgb(255, 236, 0);"></div> 
+          </div>
+
+        </div>
+		
+		   <input type='file' onchange="readURL(this);" /></br>
+           <div class="color"><img id="upfile" src="#" alt="your image" />
+		   
+		   
+		   </div>
+		   
+        <div class="clear">
+		
+		 
+		</div>
+		 
+      </div>
+	  
+    </div>
+
+     </div>
+
+</body><script>
+function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#upfile')
+                        .attr('src', e.target.result)
+                        .width(50); 
+					$('#pict').css("background-image", 'url("' + e.target.result + '")')
+						
+                };
+
+                reader.readAsDataURL(input.files[0]);
+				
+            }
+			
+        }</script>
+</html>
